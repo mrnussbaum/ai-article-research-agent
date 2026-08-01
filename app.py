@@ -42,7 +42,7 @@ def check_password():
 check_password()
 
 sys.path.insert(0, str(Path(__file__).parent / "agent"))
-from generate_post import generate_posts, generate_summary
+from generate_post import generate_post, generate_summary
 from fetch_articles import topup_queue, prune_stale, MIN_QUEUE_SIZE
 
 # ── Config ────────────────────────────────────────────────────────────────────
@@ -53,7 +53,7 @@ GITHUB_BRANCH = os.environ.get("GITHUB_BRANCH", "main")
 GITHUB_TOKEN  = os.environ.get("GITHUB_TOKEN", "")
 PERSIST_ENABLED = bool(GITHUB_TOKEN and GITHUB_OWNER and GITHUB_REPO)
 
-st.set_page_config(page_title="Post Agent", page_icon="✍️",
+st.set_page_config(page_title="Enterprise Thought Leadership Agent", page_icon="✍️",
                    layout="centered", initial_sidebar_state="collapsed")
 
 # ── GitHub state I/O (single source of truth) ─────────────────────────────────
@@ -160,7 +160,7 @@ def remove_head(reason="skip"):
 # ── Session state ─────────────────────────────────────────────────────────────
 
 for key, default in [
-    ("linkedin_draft", ""), ("facebook_draft", ""), ("generated", False),
+    ("linkedin_draft", ""), ("generated", False),
     ("ai_summary", ""), ("summary_loaded", False), ("state", None),
     ("persist_error", False),
 ]:
@@ -172,7 +172,6 @@ def reset_post_state():
     st.session_state.ai_summary = ""
     st.session_state.generated = False
     st.session_state.linkedin_draft = ""
-    st.session_state.facebook_draft = ""
 
 # ── Styles ────────────────────────────────────────────────────────────────────
 
@@ -192,7 +191,8 @@ st.markdown("""
 
 # ── Boot ──────────────────────────────────────────────────────────────────────
 
-st.title("✍️ Post Agent")
+st.title("✍️ Enterprise Thought Leadership Agent")
+st.caption("Find a relevant article, add your reaction, experience, and recommendation, then create a LinkedIn draft in your voice.")
 
 if not PERSIST_ENABLED:
     st.warning("⚠️ GitHub persistence is OFF (set GITHUB_TOKEN, GITHUB_OWNER, "
@@ -268,25 +268,43 @@ st.markdown(f'<div class="summary-box">{st.session_state.ai_summary}</div>', uns
 
 st.divider()
 
-# ── Step 1: Opinion ───────────────────────────────────────────────────────────
+# ── Step 1: Three-part point of view ──────────────────────────────────────────
 
-st.markdown('<div class="step-label">Step 1 — Your Take</div>', unsafe_allow_html=True)
-st.caption("Bullet points or prose — either works. Just write what you actually think.")
-opinion = st.text_area(
-    "Your opinion",
-    placeholder="- AI adoption is outpacing org readiness\n- Most teams don't have clean enough data\n- The real bottleneck is decision-making culture, not the tech",
-    height=140, label_visibility="collapsed",
+st.markdown('<div class="step-label">Step 1 — Add Your Point of View</div>', unsafe_allow_html=True)
+st.caption("Three brief bullets are enough. The article provides context; your point of view provides the post.")
+
+reaction = st.text_area(
+    "What’s your reaction?",
+    placeholder="What stood out? What do you agree or disagree with?",
+    height=105,
 )
-generate_clicked = st.button("Generate Posts →", type="primary", disabled=not opinion.strip())
+experience = st.text_area(
+    "What have you seen in practice?",
+    placeholder="Connect it to enterprise web, product operations, governance, change management, or AI-assisted workflows.",
+    height=105,
+)
+recommendation = st.text_area(
+    "What should teams do differently?",
+    placeholder="Give leaders or teams one practical recommendation.",
+    height=105,
+)
+
+inputs_ready = all(v.strip() for v in (reaction, experience, recommendation))
+generate_clicked = st.button(
+    "Generate LinkedIn Draft →",
+    type="primary",
+    disabled=not inputs_ready,
+    help="Complete all three fields so the draft has a point of view, credibility, and a useful takeaway.",
+)
 
 # ── Step 2: Draft ─────────────────────────────────────────────────────────────
 
-if generate_clicked and opinion.strip():
-    with st.spinner("Writing your posts..."):
+if generate_clicked and inputs_ready:
+    with st.spinner("Writing your LinkedIn post..."):
         try:
-            posts = generate_posts(article, opinion)
-            st.session_state.linkedin_draft = posts.get("linkedin", "")
-            st.session_state.facebook_draft = posts.get("facebook", "")
+            st.session_state.linkedin_draft = generate_post(
+                article, reaction, experience, recommendation
+            )
             st.session_state.generated = True
         except Exception as e:
             st.error(f"Generation failed: {e}")
@@ -295,32 +313,37 @@ if generate_clicked and opinion.strip():
 if st.session_state.generated:
     st.divider()
     st.markdown('<div class="step-label">Step 2 — Review & Edit</div>', unsafe_allow_html=True)
-    tab_li, tab_fb = st.tabs(["🔵 LinkedIn", "🔷 Facebook"])
-    with tab_li:
-        st.session_state.linkedin_draft = st.text_area(
-            "LinkedIn Post", value=st.session_state.linkedin_draft,
-            height=300, label_visibility="collapsed")
-        st.caption(f"{len(st.session_state.linkedin_draft.split())} words · "
-                   f"{len(st.session_state.linkedin_draft)} chars")
-    with tab_fb:
-        st.session_state.facebook_draft = st.text_area(
-            "Facebook Post", value=st.session_state.facebook_draft,
-            height=300, label_visibility="collapsed")
-        st.caption(f"{len(st.session_state.facebook_draft.split())} words · "
-                   f"{len(st.session_state.facebook_draft)} chars")
+    st.session_state.linkedin_draft = st.text_area(
+        "LinkedIn Post",
+        value=st.session_state.linkedin_draft,
+        height=340,
+        label_visibility="collapsed",
+    )
+    st.caption(
+        f"{len(st.session_state.linkedin_draft.split())} words · "
+        f"{len(st.session_state.linkedin_draft)} characters"
+    )
 
     st.divider()
-    st.markdown('<div class="step-label">Step 3 — Copy, Post, Done</div>', unsafe_allow_html=True)
-    st.caption("Copy the text above into LinkedIn/Facebook. Then mark it done to "
-               "clear it from your queue.")
-    p1, p2, p3 = st.columns(3)
+    st.markdown('<div class="step-label">Step 3 — Copy, Publish Manually, Done</div>', unsafe_allow_html=True)
+    st.caption(
+        "Review every claim, copy the draft into LinkedIn, make any final edits there, "
+        "and publish manually. Then mark the article done to move to the next one."
+    )
+    p1, p2 = st.columns([1, 1])
     with p1:
-        st.link_button("🔵 LinkedIn", "https://www.linkedin.com/feed/", use_container_width=True)
+        st.link_button(
+            "🔵 Open LinkedIn",
+            "https://www.linkedin.com/feed/",
+            use_container_width=True,
+        )
     with p2:
-        st.link_button("🔷 Facebook", "https://www.facebook.com/", use_container_width=True)
-    with p3:
-        if st.button("✅ Done — next", type="primary", use_container_width=True,
-                     help="Remove this article from the queue and move on"):
+        if st.button(
+            "✅ Done — next article",
+            type="primary",
+            use_container_width=True,
+            help="Remove this article from the queue and continue",
+        ):
             with st.spinner("Clearing..."):
                 remove_head("done")
             st.rerun()

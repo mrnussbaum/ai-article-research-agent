@@ -1,0 +1,23 @@
+{
+  "primary_audience": [
+    "Hiring managers for Product Operations, Global Web Operations, Senior Technical Producer, and enterprise web-platform roles",
+    "Recruiters",
+    "Potential consulting clients",
+    "Experienced practitioners with meaningful referral influence"
+  ],
+  "publishing_goal": "Generate one to two high-quality LinkedIn posts per week through manual review and copy/paste publishing.",
+  "pillars": [
+    {"name": "Global web operations", "priority": 6},
+    {"name": "Enterprise web platform governance", "priority": 6},
+    {"name": "AI-assisted workflows and operational efficiency", "priority": 5},
+    {"name": "Product operations", "priority": 5},
+    {"name": "Change management", "priority": 4},
+    {"name": "Future of work", "priority": 3}
+  ],
+  "exclude_positioning": [
+    "loyalty program management",
+    "lifecycle marketing ownership",
+    "CRM campaign operations",
+    "MarTech leadership as the primary identity"
+  ]
+}

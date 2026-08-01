@@ -1,29 +1,44 @@
 {
   "feeds": [
     {
-      "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
-      "name": "TechCrunch AI",
+      "url": "https://www.cmswire.com/rss/",
+      "name": "CMSWire",
+      "weight": 1.5
+    },
+    {
+      "url": "https://www.cio.com/feed/",
+      "name": "CIO",
+      "weight": 1.4
+    },
+    {
+      "url": "https://www.computerworld.com/index.rss",
+      "name": "Computerworld",
+      "weight": 1.3
+    },
+    {
+      "url": "https://www.infoworld.com/index.rss",
+      "name": "InfoWorld",
+      "weight": 1.25
+    },
+    {
+      "url": "https://feeds.feedburner.com/oreilly/radar/atom",
+      "name": "O'Reilly Radar",
+      "weight": 1.25
+    },
+    {
+      "url": "https://martinfowler.com/feed.atom",
+      "name": "Martin Fowler",
+      "weight": 1.25
+    },
+    {
+      "url": "https://hbr.org/advice/feed",
+      "name": "Harvard Business Review",
       "weight": 1.2
     },
     {
-      "url": "https://techcrunch.com/category/enterprise/feed/",
-      "name": "TechCrunch Enterprise",
-      "weight": 1.1
-    },
-    {
-      "url": "https://feeds.feedburner.com/TechCrunch",
-      "name": "TechCrunch All",
-      "weight": 1.0
-    },
-    {
-      "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",
-      "name": "CNBC Economy",
-      "weight": 1.0
-    },
-    {
-      "url": "https://www.cnbc.com/id/19854910/device/rss/rss.html",
-      "name": "CNBC Tech",
-      "weight": 1.1
+      "url": "https://sloanreview.mit.edu/feed/",
+      "name": "MIT Sloan Management Review",
+      "weight": 1.3
     },
     {
       "url": "https://www.technologyreview.com/feed/",
@@ -31,130 +46,169 @@
       "weight": 1.2
     },
     {
-      "url": "https://www.therundown.ai/feed",
-      "name": "The Rundown AI",
-      "weight": 1.3
-    },
-    {
-      "url": "https://venturebeat.com/feed/",
-      "name": "VentureBeat",
-      "weight": 1.1
+      "url": "https://techcrunch.com/category/enterprise/feed/",
+      "name": "TechCrunch Enterprise",
+      "weight": 1.0
     },
     {
       "url": "https://venturebeat.com/category/ai/feed/",
       "name": "VentureBeat AI",
-      "weight": 1.2
+      "weight": 0.9
     },
     {
-      "url": "https://www.saastr.com/feed/",
-      "name": "SaaStr",
-      "weight": 1.1
-    },
-    {
-      "url": "https://a16z.com/feed/",
-      "name": "a16z",
-      "weight": 1.2
-    },
-    {
-      "url": "https://hbr.org/advice/feed",
-      "name": "HBR",
-      "weight": 1.0
-    },
-    {
-      "url": "https://www.forbes.com/innovation/feed/",
-      "name": "Forbes Innovation",
-      "weight": 1.0
-    },
-    {
-      "url": "https://www.wired.com/feed/rss",
-      "name": "Wired",
-      "weight": 1.0
-    },
-    {
-      "url": "https://www.theverge.com/rss/index.xml",
-      "name": "The Verge",
-      "weight": 1.0
-    },
-    {
-      "url": "https://feeds.arstechnica.com/arstechnica/index",
-      "name": "Ars Technica",
+      "url": "https://www.fastcompany.com/technology/rss",
+      "name": "Fast Company Technology",
       "weight": 1.0
     },
     {
       "url": "https://www.zdnet.com/news/rss.xml",
-      "name": "ZDNet",
-      "weight": 1.0
-    },
-    {
-      "url": "https://www.infoworld.com/index.rss",
-      "name": "InfoWorld",
+      "name": "ZDNET",
       "weight": 1.1
     },
     {
-      "url": "https://www.computerworld.com/index.rss",
-      "name": "Computerworld",
-      "weight": 1.0
+      "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
+      "name": "Ars Technica",
+      "weight": 0.9
     },
     {
-      "url": "https://feeds.feedburner.com/oreilly/radar/atom",
-      "name": "O'Reilly Radar",
-      "weight": 1.1
+      "url": "https://www.wired.com/feed/rss",
+      "name": "WIRED",
+      "weight": 0.9
     },
     {
-      "url": "https://martinfowler.com/feed.atom",
-      "name": "Martin Fowler",
-      "weight": 1.1
+      "url": "https://developers.google.com/search/blog/feed.xml",
+      "name": "Google Search Central",
+      "weight": 1.25
     },
     {
-      "url": "https://www.businessinsider.com/rss",
-      "name": "Business Insider",
-      "weight": 1.0
+      "url": "https://web.dev/feed.xml",
+      "name": "web.dev",
+      "weight": 1.2
     },
     {
-      "url": "https://fortune.com/feed/",
-      "name": "Fortune",
-      "weight": 1.0
+      "url": "https://www.w3.org/blog/category/accessibility/feed/",
+      "name": "W3C Accessibility",
+      "weight": 1.2
     },
     {
-      "url": "https://www.fastcompany.com/technology/rss",
-      "name": "Fast Company Tech",
-      "weight": 1.1
-    },
-    {
-      "url": "https://feeds.feedburner.com/fastcompany/headlines",
-      "name": "Fast Company",
-      "weight": 1.0
+      "url": "https://worklab.libsyn.com/rss",
+      "name": "Microsoft WorkLab",
+      "weight": 1.2
     }
   ],
   "keywords": {
     "high_value": [
-      "decisioning", "decision intelligence", "agentic", "AI agent", "autonomous",
-      "SaaS", "B2B software", "enterprise AI", "LLM", "generative AI", "GenAI",
-      "workflow automation", "process automation", "orchestration", "real-time",
-      "large language model", "foundation model", "copilot", "AI platform",
-      "machine learning", "MLOps", "data pipeline", "AI adoption", "enterprise software"
+      "global web",
+      "web operations",
+      "website operations",
+      "digital operations",
+      "web platform",
+      "digital platform",
+      "platform governance",
+      "content governance",
+      "CMS governance",
+      "content management system",
+      "CMS migration",
+      "website migration",
+      "site consolidation",
+      "website consolidation",
+      "multi-brand",
+      "multibrand",
+      "localization",
+      "international website",
+      "global website",
+      "content operations",
+      "product operations",
+      "product ops",
+      "operating model",
+      "decision ownership",
+      "intake process",
+      "prioritization",
+      "workflow design",
+      "process improvement",
+      "change management",
+      "organizational change",
+      "cross-functional",
+      "AI workflow",
+      "AI-assisted",
+      "workflow automation",
+      "operational efficiency",
+      "human in the loop",
+      "AI governance",
+      "future of work",
+      "knowledge management"
     ],
     "medium_value": [
-      "artificial intelligence", "automation", "enterprise",
-      "platform", "cloud", "API", "integration", "digital transformation",
-      "software", "data", "productivity", "startup", "funding", "acquisition",
-      "product-led growth", "go-to-market", "revenue", "B2B", "CRM", "ERP",
-      "analytics", "business intelligence", "no-code", "low-code", "infrastructure"
+      "enterprise",
+      "governance",
+      "platform",
+      "digital transformation",
+      "transformation",
+      "content strategy",
+      "content migration",
+      "accessibility",
+      "privacy",
+      "compliance",
+      "analytics",
+      "measurement",
+      "SEO",
+      "quality assurance",
+      "QA",
+      "risk management",
+      "stakeholder",
+      "dependency",
+      "backlog",
+      "Agile",
+      "Scrum",
+      "automation",
+      "generative AI",
+      "GenAI",
+      "copilot",
+      "productivity",
+      "collaboration",
+      "employee experience",
+      "organizational design",
+      "leadership",
+      "operations"
     ],
     "low_value": [
-      "technology", "tech", "business", "innovation", "future", "digital"
+      "technology",
+      "business",
+      "innovation",
+      "software",
+      "digital"
     ],
     "exclude": [
-      "gaming", "entertainment", "sports", "crypto",
-      "NFT", "metaverse", "celebrity", "movies", "music",
-      "fashion", "food", "travel", "dating", "social media drama"
+      "cryptocurrency",
+      "crypto",
+      "NFT",
+      "celebrity",
+      "gaming review",
+      "movie review",
+      "sports score",
+      "dating app",
+      "consumer gadget review",
+      "funding round",
+      "seed round",
+      "series a",
+      "series b",
+      "series c",
+      "loyalty program",
+      "rewards program",
+      "customer loyalty",
+      "email campaign",
+      "marketing campaign"
     ]
   },
   "scoring": {
-    "high_value_weight": 3,
-    "medium_value_weight": 1,
+    "high_value_weight": 4,
+    "medium_value_weight": 1.5,
     "low_value_weight": 0,
-    "exclude_penalty": -10,
-    "min_score_threshold": 1
+    "exclude_penalty": -12,
+    "min_score_threshold": 3
+  },
+  "queue": {
+    "size": 10,
+    "max_age_days": 5
   }
 }

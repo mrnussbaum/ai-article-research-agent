@@ -1,97 +1,123 @@
-"""
-generate_post.py
-Generates LinkedIn and Facebook posts in the user's voice using Claude.
-Accepts bullet points or prose as opinion input.
-"""
+"""Generate an article summary and a single LinkedIn draft in Michael's voice."""
 
-import os
 import json
-import anthropic
+import os
 from pathlib import Path
+
+import anthropic
 
 ROOT = Path(__file__).parent.parent
 VOICE_PROFILE_PATH = ROOT / "voice_profile.md"
+EXPERIENCE_CONTEXT_PATH = ROOT / "experience_context.md"
 
-# Current model strings. Summary is a trivial task -> cheaper/faster Sonnet.
-# Post generation -> Opus for voice quality.
-SUMMARY_MODEL = "claude-sonnet-4-6"
-POST_MODEL = "claude-opus-4-8"
+SUMMARY_MODEL = os.getenv("ANTHROPIC_SUMMARY_MODEL", "claude-sonnet-4-6")
+POST_MODEL = os.getenv("ANTHROPIC_POST_MODEL", "claude-opus-4-8")
 
-def load_voice_profile():
-    with open(VOICE_PROFILE_PATH) as f:
-        return f.read()
+
+def _read(path: Path) -> str:
+    return path.read_text(encoding="utf-8")
+
+
+def load_voice_profile() -> str:
+    return _read(VOICE_PROFILE_PATH)
+
+
+def load_experience_context() -> str:
+    return _read(EXPERIENCE_CONTEXT_PATH)
+
 
 def generate_summary(article: dict) -> str:
     client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
     message = client.messages.create(
         model=SUMMARY_MODEL,
-        max_tokens=300,
+        max_tokens=420,
         messages=[{
             "role": "user",
-            "content": f"""Summarize this article in 3-4 sentences for a B2B SaaS and AI marketer.
-Be direct and specific. Focus on what actually happened or what the key argument is.
-No filler phrases like "The article discusses..." — just the substance.
+            "content": f"""Summarize the supplied RSS article information for an experienced enterprise product and global web operations practitioner.
+
+Return four compact sections in plain text:
+1. What happened or what the author argues (2-3 sentences)
+2. Why it matters for enterprise web, product operations, governance, change management, AI-assisted workflows, or the future of work (1-2 sentences)
+3. One assumption or tension worth challenging (1 sentence)
+4. Best-fit content pillar (choose one)
+
+Do not claim you read the full article. The available content may be only an RSS excerpt. Be precise about that limitation when the excerpt is thin.
 
 Title: {article.get('title', '')}
 Source: {article.get('source', '')}
-Content: {article.get('summary', '')}"""
-        }]
+RSS excerpt: {article.get('summary', '')}"""
+        }],
     )
     return message.content[0].text.strip()
 
 
-def generate_posts(article: dict, opinion: str) -> dict:
+def generate_post(article: dict, reaction: str, experience: str, recommendation: str) -> str:
     client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
     voice_profile = load_voice_profile()
+    experience_context = load_experience_context()
 
-    system_prompt = f"""You are a ghostwriter producing LinkedIn and Facebook posts for a B2B SaaS and AI marketer.
+    system_prompt = f"""You are Michael Nussbaum's LinkedIn ghostwriter.
 
-Your job is to translate their raw opinion — which may be bullet points or rough prose — into a polished post that sounds exactly like them. Not like a content marketer, not like an AI assistant, not like a press release.
+Your purpose is not to generate generic content. Turn Michael's current reaction, experience, and recommendation into one credible LinkedIn post that strengthens his positioning with hiring managers, recruiters, consulting prospects, and influential practitioners.
 
-Here is their complete voice profile. Follow it precisely:
-
+VOICE PROFILE
 {voice_profile}
 
-CRITICAL RULES:
-- If the input is bullet points, weave them into a cohesive narrative — do not just list them out
-- Never start a post with "I" — weak opener on LinkedIn
-- No phrases like "Great read", "Fascinating article", "This is a must-read"
-- No fake enthusiasm or hollow affirmations
-- Do not summarize the article — the post is about THEIR take, not the article
-- The article is context. The opinion is the content.
-- Do not make up facts or statistics not provided
-- Preserve and sharpen the user's specific argument
-- LinkedIn post: 150-250 words, no markdown, line breaks between thoughts, 3 hashtags max at the end
-- Facebook post: same length, slightly warmer tone, no hashtags needed
-- Return ONLY valid JSON — no preamble, no explanation, no markdown fences
+PRIVATE EXPERIENCE CONTEXT
+{experience_context}
+
+NON-NEGOTIABLE RULES
+- Michael's three inputs are the source of truth. The article is context, not the content.
+- Do not invent facts, metrics, quotations, outcomes, or company details.
+- Do not automatically insert a story from the private experience file.
+- Use a named-company example only when Michael's current experience input clearly invokes it and the example is positive/public.
+- Generalize setbacks and internal organizational problems.
+- Do not position Michael as a MarTech, loyalty, lifecycle, or CRM-campaign leader.
+- AI must be practical and non-hyped.
+- Do not start with “I wanted to share,” “Great read,” or an article summary.
+- Create one LinkedIn post, typically 140-230 words.
+- Use short paragraphs and natural line breaks.
+- A closing question is optional. When used, it must be specific and useful.
+- Use no more than three specific hashtags, and omit them when they add no value.
+- Return valid JSON only, with no markdown fence or explanation.
 """
 
-    user_prompt = f"""Article:
-Title: {article['title']}
-Source: {article['source']}
-URL: {article['url']}
-Summary: {article['summary']}
+    user_prompt = f"""ARTICLE CONTEXT
+Title: {article.get('title', '')}
+Source: {article.get('source', '')}
+URL: {article.get('url', '')}
+RSS excerpt: {article.get('summary', '')}
 
-My raw opinion (may be bullet points or prose):
-{opinion}
+MICHAEL'S CURRENT INPUTS
+Reaction — what stood out, and what he agrees or disagrees with:
+{reaction}
 
-Generate both posts. Return ONLY this JSON structure:
-{{
-  "linkedin": "the full linkedin post text here",
-  "facebook": "the full facebook post text here"
-}}"""
+Experience — what he has seen in practice:
+{experience}
+
+Recommendation — what leaders or teams should do differently:
+{recommendation}
+
+Return exactly:
+{{"linkedin": "full post text"}}"""
 
     message = client.messages.create(
         model=POST_MODEL,
-        max_tokens=1500,
+        max_tokens=1100,
         messages=[{"role": "user", "content": user_prompt}],
         system=system_prompt,
     )
 
     raw = message.content[0].text.strip()
     if raw.startswith("```"):
-        raw = raw.split("```")[1]
+        raw = raw.split("```", 2)[1]
         if raw.startswith("json"):
             raw = raw[4:]
-    raw = raw.strip()
-    return json.loads(raw)
+    result = json.loads(raw.strip())
+    return result["linkedin"].strip()
+
+
+# Backward-compatible wrapper for any external caller using the old function.
+def generate_posts(article: dict, opinion: str) -> dict:
+    post = generate_post(article, opinion, "", "")
+    return {"linkedin": post}

@@ -1,102 +1,127 @@
-# Post Agent — Setup Guide
+# Michael Nussbaum's Enterprise Thought Leadership Agent
 
-A personal daily agent that surfaces relevant B2B SaaS/AI articles, captures your opinion, generates LinkedIn and Facebook posts in your voice, and publishes them on approval.
+A private Streamlit application that finds relevant articles, summarizes the available RSS information, captures Michael's point of view in three short inputs, and creates a manually reviewed LinkedIn draft.
 
----
+The target publishing rhythm is **one to two strong posts per week**. The application is intentionally not an auto-publishing content factory.
 
-## How It Works
+## What It Does
 
-1. **GitHub Actions** runs at 8am weekdays, fetches the best article from your RSS feeds, commits it to `state.json`, and emails you a link
-2. **You click the link** → Streamlit app opens with the article
-3. **You type your raw opinion** → agent generates LinkedIn + Facebook posts in your voice
-4. **You edit if needed** → click Approve & Post → live
+1. Fetches recent articles from enterprise technology, web-platform, operations, leadership, and AI sources.
+2. Scores articles against Michael's priority topics:
+   - Global web operations
+   - Enterprise web-platform governance
+   - AI-assisted workflows and operational efficiency
+   - Product operations
+   - Change management
+   - Future of work
+3. Maintains a consumable article queue in `state.json`.
+4. Generates a concise summary of the RSS-provided content and identifies a possible tension worth challenging.
+5. Asks Michael for three inputs:
+   - **What’s your reaction?**
+   - **What have you seen in practice?**
+   - **What should teams do differently?**
+6. Generates one LinkedIn draft in Michael's personalized voice.
+7. Leaves editing, copying, and publishing fully manual.
 
----
+## Important Content Limitation
 
-## One-Time Setup
+The current version summarizes the article title and RSS excerpt. It does **not** retrieve and analyze the complete article body. The summary prompt is designed not to imply otherwise.
 
-### 1. Fork / Clone This Repo
+Always open and read the full source before publishing a response, especially when the RSS excerpt is limited.
 
-Push to your own GitHub account. Keep it private.
+## Personalized Files
 
-### 2. Create a Streamlit Account
-
-Go to [share.streamlit.io](https://share.streamlit.io) → Connect GitHub → Deploy `app.py` from your repo.
-
-### 3. Get Your API Keys
-
-| Key | Where to get it |
-|---|---|
-| `ANTHROPIC_API_KEY` | [console.anthropic.com](https://console.anthropic.com) |
-| `LINKEDIN_ACCESS_TOKEN` | LinkedIn Developer App (see below) |
-| `FACEBOOK_PAGE_ID` + `FACEBOOK_PAGE_ACCESS_TOKEN` | Meta Developer App (see below) |
-| `GITHUB_TOKEN` | GitHub Settings → Developer Settings → Personal Access Tokens (repo scope) |
-
-### 4. Set GitHub Secrets
-
-In your repo → **Settings → Secrets and variables → Actions → New secret**:
-
-```
-ANTHROPIC_API_KEY         your Anthropic API key
-STREAMLIT_APP_URL         https://yourapp.streamlit.app (your deployed URL)
-```
----
-
-## Customizing Your Sources
-
-Edit `config/sources.json`:
-
-- Add/remove RSS feeds in the `feeds` array
-- Add keywords to `high_value` to boost topic relevance
-- Add terms to `exclude` to filter out off-topic articles
-- Adjust `scoring.min_score_threshold` (higher = more selective)
-
----
-
-## Adjusting the Schedule
-
-Edit `.github/workflows/daily_article.yml`:
-
-```yaml
-- cron: "0 15 * * 1-5"   # 8am PT, Mon-Fri
-```
-
-Cron uses UTC. Converter: [crontab.guru](https://crontab.guru)
-
----
-
-## Adjusting Your Voice
-
-Edit `voice_profile.md` — this is what the AI reads when generating posts. Update it when your focus areas, tone, or typical post structure evolves.
-
----
+- `voice_profile.md` — positioning, audience, tone, role families, writing structure, and guardrails
+- `experience_context.md` — private career context and safe-use rules
+- `config/content_pillars.json` — audience and topic priorities
+- `config/sources.json` — RSS feeds, weights, keywords, exclusions, and queue settings
 
 ## File Structure
 
-```
-linkedin-agent/
+```text
+enterprise-thought-leadership-agent/
 ├── .github/workflows/
-│   └── daily_article.yml     # Runs daily, fetches article, sends email
+│   └── daily_article.yml
 ├── agent/
-│   ├── fetch_articles.py     # RSS fetcher + scorer + email sender
-│   ├── generate_post.py      # Claude-powered post generator
-│   └── post_to_social.py     # LinkedIn + Facebook API calls
+│   ├── fetch_articles.py
+│   ├── generate_post.py
+│   └── post_to_social.py       # legacy/unused; manual posting is the default
 ├── config/
-│   └── sources.json          # RSS feeds, keywords, scoring config
-├── app.py                    # Streamlit web UI
-├── state.json                # Current article + URL history
-├── voice_profile.md          # Your writing voice (edit this)
+│   ├── content_pillars.json
+│   └── sources.json
+├── app.py
+├── experience_context.md
+├── state.json
+├── voice_profile.md
 └── requirements.txt
 ```
 
----
+## One-Time Setup
 
-## Troubleshooting
+### 1. Create a private GitHub repository
 
-**No email received:** Check GitHub Actions logs under the Actions tab. Verify SMTP secrets are set correctly.
+Copy these files into a private repository. Do not commit API keys or access tokens.
 
-**"No article queued" in app:** The previous article is still marked `pending_opinion`, or no articles scored above threshold. Trigger the workflow manually from the Actions tab.
+### 2. Deploy with Streamlit Community Cloud
 
-**LinkedIn post fails:** Access tokens expire every 60 days. Regenerate via the LinkedIn developer portal.
+Connect the private GitHub repository and deploy `app.py`.
 
-**State doesn't update:** Verify `GITHUB_TOKEN` has `repo` scope in Streamlit secrets.
+### 3. Add Streamlit secrets
+
+```toml
+APP_PASSWORD = "choose-a-strong-password"
+ANTHROPIC_API_KEY = "your-key"
+GITHUB_TOKEN = "token-with-access-to-this-private-repo"
+GITHUB_OWNER = "your-github-username"
+GITHUB_REPO = "your-repository-name"
+GITHUB_BRANCH = "main"
+
+# Optional model overrides
+ANTHROPIC_SUMMARY_MODEL = "claude-sonnet-4-6"
+ANTHROPIC_POST_MODEL = "claude-opus-4-8"
+```
+
+The application also reads environment variables, which Streamlit exposes from secrets.
+
+### 4. Add GitHub Actions secrets
+
+The scheduled article fetch only needs repository write permission. The current fetch script does not send email and does not require Anthropic.
+
+Optional repository variable or secret:
+
+```text
+STREAMLIT_APP_URL=https://your-app.streamlit.app
+```
+
+## Queue and Schedule
+
+The workflow runs on weekdays. RSS fetching is also triggered automatically when the Streamlit queue falls below its minimum.
+
+Current defaults:
+
+- Queue size: 10
+- Freshness window: 5 days
+- GitHub workflow: weekdays at 16:00 UTC
+
+Edit `.github/workflows/daily_article.yml` or the `queue` object in `config/sources.json` to change them.
+
+## Editorial Workflow
+
+Before publishing:
+
+1. Read the complete article.
+2. Confirm that the generated draft accurately represents your point of view.
+3. Remove claims or details that are not supported.
+4. Confirm that named-company examples are positive, public, and appropriate.
+5. Generalize sensitive setbacks, internal dysfunction, layoffs, budgets, or individual situations.
+6. Publish manually to LinkedIn.
+
+## Positioning Boundaries
+
+The agent should position Michael around Product Operations, Global Web Operations, enterprise web-platform governance, and Senior Technical Production.
+
+It should not present him as a loyalty, lifecycle-marketing, CRM-campaign, or MarTech leader. AI should appear as a practical method for improving operations rather than as a generic thought-leadership identity.
+
+## Legacy Social Posting File
+
+`agent/post_to_social.py` remains in the repository as inherited code, but the Streamlit application does not call it. Manual LinkedIn publishing is the chosen workflow and avoids accidental posting.

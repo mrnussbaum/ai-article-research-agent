@@ -30,7 +30,7 @@ STATE_PATH = ROOT / "state.json"
 # Tunables (override via config["queue"])
 TARGET_QUEUE_SIZE = 12     # top up to this many
 MIN_QUEUE_SIZE = 5         # app triggers a network top-up when below this
-DEFAULT_MAX_AGE_DAYS = 2   # hard freshness ceiling
+DEFAULT_MAX_AGE_DAYS = 5   # hard freshness ceiling
 HISTORY_CAP = 250
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
