@@ -1,5 +1,117 @@
 {
-  "queue": [],
-  "history": [],
-  "generated_at": null
+  "queue": [
+    {
+      "id": "37cb93b91985",
+      "title": "Exploring Abbott\u2019s mission-led AI strategy",
+      "url": "https://www.cio.com/article/4201873/exploring-abbotts-mission-lead-ai-strategy.html",
+      "summary": "Medical technology companies have always been in the business of trust, and Abbott has been building it with AI for over 10 years. Long before gen AI entered the enterprise conversation, Abbott was using algorithmic AI to help diabetics manage their glucose, and imaging AI to guide surgeons in real time. Here, Sabina Ewing, Abbott\u2019s CIO, explains how a principled approach to AI governance, deep cross-functional partnerships, and a commitment to demonstrating results from within IT have kept them ahead of the curve, and its mission intact.\n\n\n\nHow is Abbott using AI to achieve its mission and gr",
+      "source": "CIO",
+      "score": 15.4,
+      "published": "2026-07-29T10:00:00+00:00",
+      "fetched_at": "2026-08-01T01:08:09.742370+00:00"
+    },
+    {
+      "id": "82debd439eec",
+      "title": "With AI, control matters more than capability",
+      "url": "https://www.cio.com/article/4203027/with-ai-control-matters-more-than-capability.html",
+      "summary": "Ask most enterprise technology teams where they spend their AI strategy energy and you will get the same answer: figuring out which model to use. It feels like the right question. As organizations move from pilots into production and the real compliance, cost and continuity risks appear, it turns out to be the wrong one.\n\n\n\nWriting on CIO.com this year, Floyd DCosta argued the divide is between enterprises that own their AI and those that rent it, and later that closed-model dependency is outsourced intelligence with a vendor kill switch in your operations. He is right. But the ownership quest",
+      "source": "CIO",
+      "score": 8.4,
+      "published": "2026-07-30T12:00:00+00:00",
+      "fetched_at": "2026-08-01T01:08:09.741171+00:00"
+    },
+    {
+      "id": "7114c2c6372e",
+      "title": "Microsoft doubles down on multi-model AI as it builds a Copilot super app",
+      "url": "https://www.cio.com/article/4203686/microsoft-doubles-down-on-multi-model-ai-as-it-builds-a-copilot-super-app.html",
+      "summary": "All of the major AI providers want you to use, and ideally stay within, their super apps, and now Microsoft is looking to capture that attention, too.\n\n\n\nDuring an earnings call this week, CEO Satya Nadella confirmed that the tech giant is building a Copilot \u2018super app\u2019 that will be rolled out this quarter. The new platform will bring together various Copilot tools, including chat, Cowork, long-running Autopilot agents, and the always-on Microsoft Scout, powered by OpenClaw.\n\n\n\nMicrosoft said the super app will be wired into many of its other governance platforms, including Agent 365, IT Ops, ",
+      "source": "CIO",
+      "score": 6.3,
+      "published": "2026-07-31T02:02:43+00:00",
+      "fetched_at": "2026-08-01T01:08:09.740910+00:00"
+    },
+    {
+      "id": "00445e2a87a2",
+      "title": "Snowflake launches AI agent governance layer to track activity, control costs",
+      "url": "https://www.cio.com/article/4202795/snowflake-launches-ai-agent-governance-layer-to-track-activity-control-costs.html",
+      "summary": "As enterprises grapple with governing growing fleets of AI agents, Snowflake has unveiled Cortex AI Gateway, a new runtime control plane designed to help organizations track agent actions, enforce policies, and manage AI spending across models and tools.\n\n\n\nBuilt on technology acquired through the purchase of Natoma earlier in May, Cortex AI Gateway \u201cacts as an execution layer\u201d that applies governance policies defined in Horizon Catalog while routing requests and enforcing cost controls across first- and third-party AI agents in an enterprise, said Artin Avanes, head of core data platform at S",
+      "source": "CIO",
+      "score": 6.3,
+      "published": "2026-07-29T11:11:54+00:00",
+      "fetched_at": "2026-08-01T01:08:09.742044+00:00"
+    },
+    {
+      "id": "565a94ce589e",
+      "title": "Forward-deployed engineering in the age of agentic AI: From vibe coding to governed autonomy",
+      "url": "https://www.cio.com/article/4202404/forward-deployed-engineering-in-the-age-of-agentic-ai-from-vibe-coding-to-governed-autonomy.html",
+      "summary": "Forward-deployed engineering (FDE), has moved from being a niche delivery model to becoming one of the most important operating patterns for enterprise artificial intelligence. In traditional software programs, organizations could usually separate product engineering, implementation consulting, operations and governance into different teams. Agentic AI changes that separation. An agent does not merely answer a question; it may plan, call tools, read enterprise data, update systems, create artifacts, trigger approvals and continue across several steps. Because of this, production success depend",
+      "source": "CIO",
+      "score": 6.3,
+      "published": "2026-07-29T11:00:00+00:00",
+      "fetched_at": "2026-08-01T01:08:09.742185+00:00"
+    },
+    {
+      "id": "e0336b6fd5b8",
+      "title": "Microsoft doubles down on multi-model AI as it builds a Copilot super app",
+      "url": "https://www.computerworld.com/article/4203702/microsoft-doubles-down-on-multi-model-ai-as-it-builds-a-copilot-super-app-3.html",
+      "summary": "All of the major AI providers want you to use, and ideally stay within, their super apps, and now Microsoft is looking to capture that attention, too.\n\n\n\nDuring an earnings call this week, CEO Satya Nadella confirmed that the tech giant is building a Copilot \u2018super app\u2019 that will be rolled out this quarter. The new platform will bring together various Copilot tools, including chat, Cowork, long-running Autopilot agents, and the always-on Microsoft Scout, powered by OpenClaw.\n\n\n\nMicrosoft said the super app will be wired into many of its other governance platforms, including Agent 365, IT Ops, ",
+      "source": "Computerworld",
+      "score": 5.85,
+      "published": "2026-07-31T02:13:46+00:00",
+      "fetched_at": "2026-08-01T01:08:10.482322+00:00"
+    },
+    {
+      "id": "5f045b3f37a0",
+      "title": "Samsung\u2019s AI-powered glasses could be looking at your data",
+      "url": "https://www.computerworld.com/article/4202064/samsungs-entry-into-ai-powered-glasses-forces-cisos-to-again-consider-corporate-risk-2.html",
+      "summary": "Now that Samsung has jumped into the crowded AI-powered glasses arena alongside Apple, Google, Meta, and others, CISOs and IT leaders are again having to think through whether it makes sense to establish enterprise restrictions on such devices, given the likely data leakage and privacy and compliance issues.\n\n\n\nAnd even if those tech leaders decide that such policies might make sense, the logistical hurdles to universally enforcing them outside the office are all but insurmountable.\n\n\n\nFor example, it is up to individual wearers to choose their device\u2019s settings, making it difficult for IT pol",
+      "source": "Computerworld",
+      "score": 5.85,
+      "published": "2026-07-28T01:47:39+00:00",
+      "fetched_at": "2026-08-01T01:08:10.483722+00:00"
+    },
+    {
+      "id": "62ab6227bc18",
+      "title": "AI has become Apple\u2019s latest bug detective",
+      "url": "https://www.computerworld.com/article/4202355/ai-has-become-apples-latest-bug-detective.html",
+      "summary": "Artificial intelligence is becoming a force multiplier for Apple security research. Apple\u2019s\u00a0latest 26.5.2 software update includes patches for a record number of bugs \u2014 many of them identified by security researchers using AI-assisted tools.\n\n\n\nA record haul of fixes\n\n\n\nThe numbers tell the story. Apple fixed 87 security vulnerabilities\u00a0in\u00a0iOS and iPadOS 26.6, along with an additional 155 patches for Macs. Roughly 100 flaws have been patched in each of Apple\u2019s other operating systems: watchOS, tvOS, and visionOS.\u00a0Taken together, these represent record numbers for an Apple security update.\u00a0\n\n\n\n",
+      "source": "Computerworld",
+      "score": 5.2,
+      "published": "2026-07-28T16:17:05+00:00",
+      "fetched_at": "2026-08-01T01:08:10.483030+00:00"
+    },
+    {
+      "id": "0f09f3280a2b",
+      "title": "Your AI model isn\u2019t the problem. Your data was never ready for it",
+      "url": "https://www.cio.com/article/4203514/your-ai-model-isnt-the-problem-your-data-was-never-ready-for-it.html",
+      "summary": "The meeting that changed my perspective\n\n\n\nI remember sitting there and realizing I wasn\u2019t thinking about the model at all. I was thinking about the data feeding it.\n\n\n\nOne discussion stands out in particular. We were evaluating how predictive analytics could improve sales forecasting for a national portfolio of opportunities. Leadership wanted greater confidence in projected outcomes so resources could be prioritized earlier in the sales cycle. As conversations turned toward model accuracy, we discovered something more important. Different teams weren\u2019t consistently recording opportunity stag",
+      "source": "CIO",
+      "score": 4.2,
+      "published": "2026-07-31T09:00:00+00:00",
+      "fetched_at": "2026-08-01T01:08:09.740753+00:00"
+    },
+    {
+      "id": "fda8835112d8",
+      "title": "How CaixaBank drives partner and customer relationships through AI",
+      "url": "https://www.cio.com/article/4201136/from-digital-banking-to-smart-banking-caixabank-is-fostering-a-new-relationship-with-customers-through-ai.html",
+      "summary": "The transformation of the financial sector\u00a0is no longer just about offering a mobile app or allowing customers to bank from anywhere. After years of digitizing services, institutions now face the more ambitious challenge of building a more personalized, agile, and intelligent relationship with millions of users who expect immediate answers, simple experiences, and service tailored to specific needs.\u00a0\n\n\n\nThe emergence of\u00a0gen AI\u00a0has accelerated this evolution. While banks have used AI models for years to automate processes, improve efficiency, and analyze large volumes of data, a new generation ",
+      "source": "CIO",
+      "score": 4.2,
+      "published": "2026-07-30T10:00:00+00:00",
+      "fetched_at": "2026-08-01T01:08:09.741457+00:00"
+    }
+  ],
+  "history": [
+    "https://www.cio.com/article/4201873/exploring-abbotts-mission-lead-ai-strategy.html",
+    "https://www.cio.com/article/4203027/with-ai-control-matters-more-than-capability.html",
+    "https://www.cio.com/article/4203686/microsoft-doubles-down-on-multi-model-ai-as-it-builds-a-copilot-super-app.html",
+    "https://www.cio.com/article/4202795/snowflake-launches-ai-agent-governance-layer-to-track-activity-control-costs.html",
+    "https://www.cio.com/article/4202404/forward-deployed-engineering-in-the-age-of-agentic-ai-from-vibe-coding-to-governed-autonomy.html",
+    "https://www.computerworld.com/article/4203702/microsoft-doubles-down-on-multi-model-ai-as-it-builds-a-copilot-super-app-3.html",
+    "https://www.computerworld.com/article/4202064/samsungs-entry-into-ai-powered-glasses-forces-cisos-to-again-consider-corporate-risk-2.html",
+    "https://www.computerworld.com/article/4202355/ai-has-become-apples-latest-bug-detective.html",
+    "https://www.cio.com/article/4203514/your-ai-model-isnt-the-problem-your-data-was-never-ready-for-it.html",
+    "https://www.cio.com/article/4201136/from-digital-banking-to-smart-banking-caixabank-is-fostering-a-new-relationship-with-customers-through-ai.html"
+  ],
+  "generated_at": "2026-08-01T01:08:17.231496+00:00"
 }
