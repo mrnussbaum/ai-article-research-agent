@@ -1,104 +1,94 @@
 {
   "queue": [
     {
-      "id": "37cb93b91985",
-      "title": "Exploring Abbott\u2019s mission-led AI strategy",
-      "url": "https://www.cio.com/article/4201873/exploring-abbotts-mission-lead-ai-strategy.html",
-      "summary": "Medical technology companies have always been in the business of trust, and Abbott has been building it with AI for over 10 years. Long before gen AI entered the enterprise conversation, Abbott was using algorithmic AI to help diabetics manage their glucose, and imaging AI to guide surgeons in real time. Here, Sabina Ewing, Abbott\u2019s CIO, explains how a principled approach to AI governance, deep cross-functional partnerships, and a commitment to demonstrating results from within IT have kept them ahead of the curve, and its mission intact.\n\n\n\nHow is Abbott using AI to achieve its mission and gr",
+      "id": "25e7459f58e9",
+      "title": "Beyond chatbots: How embedded GenAI is transforming banking application development",
+      "url": "https://www.cio.com/article/4206307/beyond-chatbots-how-embedded-genai-is-transforming-banking-application-development.html",
+      "summary": "Business application development is entering a new operating model. The traditional approach of gathering requirements, designing screens, writing services, integrating systems, testing, fixing defects and preparing release documentation still exists, but it is no longer sufficient for enterprises that need speed, traceability, resilience and regulatory confidence at the same time. Hyperautomation brings a broader discipline to this challenge. It combines workflow orchestration, intelligent document processing, robotic automation, API-led integration, process mining, test automation, observabi",
       "source": "CIO",
-      "score": 15.4,
-      "published": "2026-07-29T10:00:00+00:00",
-      "fetched_at": "2026-08-01T01:08:09.742370+00:00"
+      "score": 11.9,
+      "published": "2026-08-07T11:00:00+00:00",
+      "fetched_at": "2026-08-07T22:01:39.050484+00:00"
     },
     {
-      "id": "82debd439eec",
-      "title": "With AI, control matters more than capability",
-      "url": "https://www.cio.com/article/4203027/with-ai-control-matters-more-than-capability.html",
-      "summary": "Ask most enterprise technology teams where they spend their AI strategy energy and you will get the same answer: figuring out which model to use. It feels like the right question. As organizations move from pilots into production and the real compliance, cost and continuity risks appear, it turns out to be the wrong one.\n\n\n\nWriting on CIO.com this year, Floyd DCosta argued the divide is between enterprises that own their AI and those that rent it, and later that closed-model dependency is outsourced intelligence with a vendor kill switch in your operations. He is right. But the ownership quest",
+      "id": "bf2d4004dfb9",
+      "title": "Enterprise-wide AI transformation starts with change management",
+      "url": "https://www.cio.com/article/4202993/enterprise-wide-ai-transformation-starts-with-change-management.html",
+      "summary": "Technology leaders are facing a sobering reality: They\u2019re investing heavily in AI, yet many initiatives continue to struggle to move beyond experimentation and pilot programs. For example, Gartner found only 28% of AI use cases in infrastructure and operations fully succeed and meet ROI expectations, while 20% fail outright.\n\n\n\nThe conversation around AI often focuses on models, tools and technical capabilities. Those decisions matter, but in my experience, they are rarely the only factors that determine success. The organizations realizing meaningful value from AI are also focused on operatio",
       "source": "CIO",
-      "score": 8.4,
-      "published": "2026-07-30T12:00:00+00:00",
-      "fetched_at": "2026-08-01T01:08:09.741171+00:00"
+      "score": 11.9,
+      "published": "2026-08-07T09:00:00+00:00",
+      "fetched_at": "2026-08-07T22:01:39.050906+00:00"
     },
     {
-      "id": "7114c2c6372e",
-      "title": "Microsoft doubles down on multi-model AI as it builds a Copilot super app",
-      "url": "https://www.cio.com/article/4203686/microsoft-doubles-down-on-multi-model-ai-as-it-builds-a-copilot-super-app.html",
-      "summary": "All of the major AI providers want you to use, and ideally stay within, their super apps, and now Microsoft is looking to capture that attention, too.\n\n\n\nDuring an earnings call this week, CEO Satya Nadella confirmed that the tech giant is building a Copilot \u2018super app\u2019 that will be rolled out this quarter. The new platform will bring together various Copilot tools, including chat, Cowork, long-running Autopilot agents, and the always-on Microsoft Scout, powered by OpenClaw.\n\n\n\nMicrosoft said the super app will be wired into many of its other governance platforms, including Agent 365, IT Ops, ",
-      "source": "CIO",
-      "score": 6.3,
-      "published": "2026-07-31T02:02:43+00:00",
-      "fetched_at": "2026-08-01T01:08:09.740910+00:00"
+      "id": "57370f258721",
+      "title": "Enterprise AI doesn\u2019t need another app: it needs its language",
+      "url": "https://www.fastcompany.com/91584370/enterprise-ai-doesnt-need-another-app-it-needs-its-language?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss",
+      "summary": "For the past two years, companies have been asking the same question in slightly different forms: which AI application should we build next?&nbsp;\n\n\n\nA customer service agent? A sales copilot? A procurement assistant? A coding agent? A research assistant? A workflow automation layer? A chatbot connected to internal data? A model wrapped in a user interface and connected to tools?\n\n\n\nAll of that makes sense. It is how every new computing era begins. First, people try to build applications directly on top of the new substrate. They use whatever tools already exist, wrap the new capability in fam",
+      "source": "Fast Company Technology",
+      "score": 8.5,
+      "published": "2026-08-07T08:30:00+00:00",
+      "fetched_at": "2026-08-07T22:01:42.488090+00:00"
     },
     {
-      "id": "00445e2a87a2",
-      "title": "Snowflake launches AI agent governance layer to track activity, control costs",
-      "url": "https://www.cio.com/article/4202795/snowflake-launches-ai-agent-governance-layer-to-track-activity-control-costs.html",
-      "summary": "As enterprises grapple with governing growing fleets of AI agents, Snowflake has unveiled Cortex AI Gateway, a new runtime control plane designed to help organizations track agent actions, enforce policies, and manage AI spending across models and tools.\n\n\n\nBuilt on technology acquired through the purchase of Natoma earlier in May, Cortex AI Gateway \u201cacts as an execution layer\u201d that applies governance policies defined in Horizon Catalog while routing requests and enforcing cost controls across first- and third-party AI agents in an enterprise, said Artin Avanes, head of core data platform at S",
-      "source": "CIO",
-      "score": 6.3,
-      "published": "2026-07-29T11:11:54+00:00",
-      "fetched_at": "2026-08-01T01:08:09.742044+00:00"
-    },
-    {
-      "id": "565a94ce589e",
-      "title": "Forward-deployed engineering in the age of agentic AI: From vibe coding to governed autonomy",
-      "url": "https://www.cio.com/article/4202404/forward-deployed-engineering-in-the-age-of-agentic-ai-from-vibe-coding-to-governed-autonomy.html",
-      "summary": "Forward-deployed engineering (FDE), has moved from being a niche delivery model to becoming one of the most important operating patterns for enterprise artificial intelligence. In traditional software programs, organizations could usually separate product engineering, implementation consulting, operations and governance into different teams. Agentic AI changes that separation. An agent does not merely answer a question; it may plan, call tools, read enterprise data, update systems, create artifacts, trigger approvals and continue across several steps. Because of this, production success depend",
-      "source": "CIO",
-      "score": 6.3,
-      "published": "2026-07-29T11:00:00+00:00",
-      "fetched_at": "2026-08-01T01:08:09.742185+00:00"
-    },
-    {
-      "id": "e0336b6fd5b8",
-      "title": "Microsoft doubles down on multi-model AI as it builds a Copilot super app",
-      "url": "https://www.computerworld.com/article/4203702/microsoft-doubles-down-on-multi-model-ai-as-it-builds-a-copilot-super-app-3.html",
-      "summary": "All of the major AI providers want you to use, and ideally stay within, their super apps, and now Microsoft is looking to capture that attention, too.\n\n\n\nDuring an earnings call this week, CEO Satya Nadella confirmed that the tech giant is building a Copilot \u2018super app\u2019 that will be rolled out this quarter. The new platform will bring together various Copilot tools, including chat, Cowork, long-running Autopilot agents, and the always-on Microsoft Scout, powered by OpenClaw.\n\n\n\nMicrosoft said the super app will be wired into many of its other governance platforms, including Agent 365, IT Ops, ",
-      "source": "Computerworld",
-      "score": 5.85,
-      "published": "2026-07-31T02:13:46+00:00",
-      "fetched_at": "2026-08-01T01:08:10.482322+00:00"
-    },
-    {
-      "id": "5f045b3f37a0",
-      "title": "Samsung\u2019s AI-powered glasses could be looking at your data",
-      "url": "https://www.computerworld.com/article/4202064/samsungs-entry-into-ai-powered-glasses-forces-cisos-to-again-consider-corporate-risk-2.html",
-      "summary": "Now that Samsung has jumped into the crowded AI-powered glasses arena alongside Apple, Google, Meta, and others, CISOs and IT leaders are again having to think through whether it makes sense to establish enterprise restrictions on such devices, given the likely data leakage and privacy and compliance issues.\n\n\n\nAnd even if those tech leaders decide that such policies might make sense, the logistical hurdles to universally enforcing them outside the office are all but insurmountable.\n\n\n\nFor example, it is up to individual wearers to choose their device\u2019s settings, making it difficult for IT pol",
-      "source": "Computerworld",
-      "score": 5.85,
-      "published": "2026-07-28T01:47:39+00:00",
-      "fetched_at": "2026-08-01T01:08:10.483722+00:00"
-    },
-    {
-      "id": "62ab6227bc18",
-      "title": "AI has become Apple\u2019s latest bug detective",
-      "url": "https://www.computerworld.com/article/4202355/ai-has-become-apples-latest-bug-detective.html",
-      "summary": "Artificial intelligence is becoming a force multiplier for Apple security research. Apple\u2019s\u00a0latest 26.5.2 software update includes patches for a record number of bugs \u2014 many of them identified by security researchers using AI-assisted tools.\n\n\n\nA record haul of fixes\n\n\n\nThe numbers tell the story. Apple fixed 87 security vulnerabilities\u00a0in\u00a0iOS and iPadOS 26.6, along with an additional 155 patches for Macs. Roughly 100 flaws have been patched in each of Apple\u2019s other operating systems: watchOS, tvOS, and visionOS.\u00a0Taken together, these represent record numbers for an Apple security update.\u00a0\n\n\n\n",
-      "source": "Computerworld",
+      "id": "c83173699d92",
+      "title": "Stop Prompting AI. Start Directing It",
+      "url": "https://sloanreview.mit.edu/article/stop-prompting-ai-start-directing-it/",
+      "summary": "James Yang/theispot.com The Research The authors drew on two streams of research for this article. The first was a qualitative study of AI-assisted discovery that identified four pathways by which AI generates surprising insights during analytical work.i The second stream was an examination of how organizations function as algorithmic \ufeffassemblages; it showed that algorithmic systems [&#8230;]",
+      "source": "MIT Sloan Management Review",
       "score": 5.2,
-      "published": "2026-07-28T16:17:05+00:00",
-      "fetched_at": "2026-08-01T01:08:10.483030+00:00"
+      "published": "2026-08-05T11:00:54+00:00",
+      "fetched_at": "2026-08-07T22:01:41.716682+00:00"
     },
     {
-      "id": "0f09f3280a2b",
-      "title": "Your AI model isn\u2019t the problem. Your data was never ready for it",
-      "url": "https://www.cio.com/article/4203514/your-ai-model-isnt-the-problem-your-data-was-never-ready-for-it.html",
-      "summary": "The meeting that changed my perspective\n\n\n\nI remember sitting there and realizing I wasn\u2019t thinking about the model at all. I was thinking about the data feeding it.\n\n\n\nOne discussion stands out in particular. We were evaluating how predictive analytics could improve sales forecasting for a national portfolio of opportunities. Leadership wanted greater confidence in projected outcomes so resources could be prioritized earlier in the sales cycle. As conversations turned toward model accuracy, we discovered something more important. Different teams weren\u2019t consistently recording opportunity stag",
+      "id": "2eedbeab82cf",
+      "title": "From ambition to action: What Canadian tech leaders must get right to see meaningful value from transformation efforts",
+      "url": "https://www.cio.com/article/4206862/4206862.html",
+      "summary": "It\u2019s no secret that the CIO role is changing in Canadian enterprises. Driving operational performance and increasing efficiency are, of course, still a big part of the job. But CIOs are now expected to do more than cut costs and keep the lights on. Increasingly, boards of directors expect the CIO to play a key role in creating value and enabling their organizations to outperform their rivals. Recent data backs this up. The overwhelming majority (91%) of Canadian technology leaders believe advanced technology will be the primary driver of competitive advantage over the next three years, accordi",
       "source": "CIO",
       "score": 4.2,
-      "published": "2026-07-31T09:00:00+00:00",
-      "fetched_at": "2026-08-01T01:08:09.740753+00:00"
+      "published": "2026-08-07T19:52:05+00:00",
+      "fetched_at": "2026-08-07T22:01:39.049992+00:00"
     },
     {
-      "id": "fda8835112d8",
-      "title": "How CaixaBank drives partner and customer relationships through AI",
-      "url": "https://www.cio.com/article/4201136/from-digital-banking-to-smart-banking-caixabank-is-fostering-a-new-relationship-with-customers-through-ai.html",
-      "summary": "The transformation of the financial sector\u00a0is no longer just about offering a mobile app or allowing customers to bank from anywhere. After years of digitizing services, institutions now face the more ambitious challenge of building a more personalized, agile, and intelligent relationship with millions of users who expect immediate answers, simple experiences, and service tailored to specific needs.\u00a0\n\n\n\nThe emergence of\u00a0gen AI\u00a0has accelerated this evolution. While banks have used AI models for years to automate processes, improve efficiency, and analyze large volumes of data, a new generation ",
+      "id": "2b4c94de92e7",
+      "title": "Your AI hiring tool isn\u2019t an HR problem. It\u2019s a security one",
+      "url": "https://www.cio.com/article/4206304/your-ai-hiring-tool-isnt-an-hr-problem-its-a-security-one.html",
+      "summary": "For years, applicant tracking systems and recruiting platforms were treated as HR technology: Important for workflow, efficiency, compliance and candidate experience, but rarely viewed as core security infrastructure. That assumption no longer holds. Once AI begins reading resumes, scoring candidates, conducting interviews, ranking applicants and influencing who moves forward, the hiring platform stops being a passive system of record. It becomes a decision system.\n\n\n\nAnd any system that accepts public input, processes sensitive data and influences business decisions belongs inside the securit",
       "source": "CIO",
       "score": 4.2,
-      "published": "2026-07-30T10:00:00+00:00",
-      "fetched_at": "2026-08-01T01:08:09.741457+00:00"
+      "published": "2026-08-07T10:00:00+00:00",
+      "fetched_at": "2026-08-07T22:01:39.050673+00:00"
+    },
+    {
+      "id": "fcaac4348e08",
+      "title": "Structural agile: Why fast delivery quietly loses its meaning",
+      "url": "https://www.cio.com/article/4205732/structural-agile-why-fast-delivery-quietly-loses-its-meaning.html",
+      "summary": "Open the history tab of any epic that has been alive for more than two quarters. Go ahead, pick one. Count the edits. Somewhere around edit 11, the description was rewritten to satisfy a stakeholder who has since changed roles. Around edit 19, the scope was trimmed to protect a date that, in the end, moved anyway. By edit 26 someone renamed the whole thing, and the sentence that explained why the work existed in the first place didn\u2019t survive the paste. 26 edits, several hundred hours of delivery behind them, and nobody left who can say what the money was for.\n\n\n\nNobody deleted that reason on ",
+      "source": "CIO",
+      "score": 4.2,
+      "published": "2026-08-06T11:00:00+00:00",
+      "fetched_at": "2026-08-07T22:01:39.051454+00:00"
+    },
+    {
+      "id": "6889c0a73f92",
+      "title": "How AI takes flight at GE Aerospace",
+      "url": "https://www.cio.com/article/4203063/how-ai-takes-flight-at-ge-aerospace.html",
+      "summary": "The race to adopt AI has left many CIOs wrestling with a fundamental question: How do you move faster without introducing unacceptable risk?\n\n\n\nFew leaders face that challenge at a higher level than David Burns, CIO of GE Aerospace. Building on the company\u2019s decade of experience applying AI across its business, Burns is helping lead the next phase of the company\u2019s digital transformation by leveraging AI to simplify and automate processes. Burns\u2019 experience shows how AI can accelerate innovation, improve decision-making, and create value for the business and customers while maintaining the trus",
+      "source": "CIO",
+      "score": 4.2,
+      "published": "2026-08-06T09:30:00+00:00",
+      "fetched_at": "2026-08-07T22:01:39.051797+00:00"
+    },
+    {
+      "id": "17c3fd6f9f4c",
+      "title": "AI agents get better at IT ops, but only with humans in the loop",
+      "url": "https://www.computerworld.com/article/4205062/ai-agents-get-better-at-it-ops-but-only-with-humans-in-the-loop.html",
+      "summary": "AI agents are performing roughly 1 in 3 actions in enterprise IT workflows (but that share is rising quickly), while human analysts are rejecting about one-quarter of AI-proposed actions (but that rate is falling), according to a new study of tens of thousands of human-AI interactions. Operational data, rather than underlying AI infrastructures, is often the culprit when things go wrong.\n\n\n\nHuman analysts are approving the most consequential actions, managing exceptions, and supervising and shaping agentic systems, while AI agents are carrying out routine tasks and executions, automation platf",
+      "source": "Computerworld",
+      "score": 3.9,
+      "published": "2026-08-04T14:53:01+00:00",
+      "fetched_at": "2026-08-07T22:01:39.431010+00:00"
     }
   ],
   "history": [
@@ -111,7 +101,16 @@
     "https://www.computerworld.com/article/4202064/samsungs-entry-into-ai-powered-glasses-forces-cisos-to-again-consider-corporate-risk-2.html",
     "https://www.computerworld.com/article/4202355/ai-has-become-apples-latest-bug-detective.html",
     "https://www.cio.com/article/4203514/your-ai-model-isnt-the-problem-your-data-was-never-ready-for-it.html",
-    "https://www.cio.com/article/4201136/from-digital-banking-to-smart-banking-caixabank-is-fostering-a-new-relationship-with-customers-through-ai.html"
+    "https://www.cio.com/article/4201136/from-digital-banking-to-smart-banking-caixabank-is-fostering-a-new-relationship-with-customers-through-ai.html",
+    "https://www.cio.com/article/4206307/beyond-chatbots-how-embedded-genai-is-transforming-banking-application-development.html",
+    "https://www.cio.com/article/4202993/enterprise-wide-ai-transformation-starts-with-change-management.html",
+    "https://www.fastcompany.com/91584370/enterprise-ai-doesnt-need-another-app-it-needs-its-language?partner=rss&utm_source=rss&utm_medium=feed&utm_campaign=rss+fastcompany&utm_content=rss",
+    "https://sloanreview.mit.edu/article/stop-prompting-ai-start-directing-it/",
+    "https://www.cio.com/article/4206862/4206862.html",
+    "https://www.cio.com/article/4206304/your-ai-hiring-tool-isnt-an-hr-problem-its-a-security-one.html",
+    "https://www.cio.com/article/4205732/structural-agile-why-fast-delivery-quietly-loses-its-meaning.html",
+    "https://www.cio.com/article/4203063/how-ai-takes-flight-at-ge-aerospace.html",
+    "https://www.computerworld.com/article/4205062/ai-agents-get-better-at-it-ops-but-only-with-humans-in-the-loop.html"
   ],
-  "generated_at": "2026-08-01T01:08:17.231496+00:00"
+  "generated_at": "2026-08-07T22:01:45.706791+00:00"
 }
