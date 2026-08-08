@@ -1,16 +1,6 @@
 {
   "queue": [
     {
-      "id": "25e7459f58e9",
-      "title": "Beyond chatbots: How embedded GenAI is transforming banking application development",
-      "url": "https://www.cio.com/article/4206307/beyond-chatbots-how-embedded-genai-is-transforming-banking-application-development.html",
-      "summary": "Business application development is entering a new operating model. The traditional approach of gathering requirements, designing screens, writing services, integrating systems, testing, fixing defects and preparing release documentation still exists, but it is no longer sufficient for enterprises that need speed, traceability, resilience and regulatory confidence at the same time. Hyperautomation brings a broader discipline to this challenge. It combines workflow orchestration, intelligent document processing, robotic automation, API-led integration, process mining, test automation, observabi",
-      "source": "CIO",
-      "score": 11.9,
-      "published": "2026-08-07T11:00:00+00:00",
-      "fetched_at": "2026-08-07T22:01:39.050484+00:00"
-    },
-    {
       "id": "bf2d4004dfb9",
       "title": "Enterprise-wide AI transformation starts with change management",
       "url": "https://www.cio.com/article/4202993/enterprise-wide-ai-transformation-starts-with-change-management.html",
@@ -112,5 +102,5 @@
     "https://www.cio.com/article/4203063/how-ai-takes-flight-at-ge-aerospace.html",
     "https://www.computerworld.com/article/4205062/ai-agents-get-better-at-it-ops-but-only-with-humans-in-the-loop.html"
   ],
-  "generated_at": "2026-08-07T22:01:45.706791+00:00"
+  "generated_at": "2026-08-08T01:13:49.989153+00:00"
 }
